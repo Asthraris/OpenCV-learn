@@ -8,10 +8,13 @@ from Resize import cngScaleFrame
     
 
 
-ske_img = cv.imread("Resources/Skeleton.jpg")
+# ske_img = cv.imread("Resources/Skeleton.jpg")
+img = getBlankCanvas([500,500])
+
 #creates the window using below command new window for new command
 #it uses win32 api for windows , Qt for linus and Mac
-cv.imshow("DEMO", cngScaleFrame(ske_img , 0.25))
+cv.imshow("DEMO-img", img)
+
 #keeps the window open till any key is pressed
 cv.waitKey(0)
 
