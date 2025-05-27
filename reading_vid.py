@@ -5,8 +5,8 @@ from Resize import getFrameDuration
 
 #template jesa bana le
 
-source = "Resources/car.mp4"
-# source = 0
+# source = "Resources/car.mp4"
+source = 0
 
 
 #webcam ke liye 0 bola hai , 0 is primaty cam 1 is not available for laptop
@@ -28,7 +28,12 @@ while True:
     if not frameSuccess:
         break
     # imshow mutliple times windows create nhi karta woh name se bas videos ko switch karta hai so names are importnat
-    cv.imshow("Video",frame)
+
+    #filters
+    # frame = cv.GaussianBlur(frame,(11,11),cv.BORDER_DEFAULT)
+    # frame = 1-cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
+    # frame = cv.Canny(frame,80,80)
+    cv.imshow("Video",cv.flip(frame , 1))
 
     
 

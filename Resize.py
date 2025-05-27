@@ -14,10 +14,13 @@ def cngScaleFrame(frame , scale = 0.5):
     dimes = (width,height)
     return cv.resize(frame ,dimes, interpolation=cv.INTER_AREA)
 
+
 #for UNeven resolution frame
 def cngResolutionFrame(frame , Dimension):
     return cv.resize(frame,Dimension,interpolation=cv.INTER_AREA)
 
+def EnlargeFrame(frame , Dimension):
+    return cv.resize(frame,Dimension,interpolation=cv.INTER_LINEAR)
 
 #concrete way to find fps and play real duration [[ONLY FOR PRE RECOREDED VIDEOS IN WEBCAM IT WILL GIVE ERROR]]
 def getFrameDuration(Video : cv.VideoCapture):
