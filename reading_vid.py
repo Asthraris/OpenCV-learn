@@ -1,5 +1,5 @@
 import cv2 as cv
-
+from face_detect import detect
 #my modules
 from Resize import getFrameDuration
 
@@ -20,6 +20,7 @@ if isinstance(source,str) :# means local video #isinstance checks the datatype a
 else:
     flipDuration = 1
     
+
 #iterate over entire frames of vidio
 while True:
     #reads one frame then inc the frame ptr to read next automatically
@@ -33,7 +34,10 @@ while True:
     # frame = cv.GaussianBlur(frame,(11,11),cv.BORDER_DEFAULT)
     # frame = 1-cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
     # frame = cv.Canny(frame,80,80)
-    cv.imshow("Video",cv.flip(frame , 1))
+    
+    frame = detect(frame)
+    
+    cv.imshow("Video",frame)
 
     
 
